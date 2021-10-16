@@ -4,25 +4,19 @@ body {
 
 main {
     width: 90%;
-    margin: 1% auto;
+    margin: 2vh auto;
     max-width: 1920px;
-    /*display: flex;*/
-    /*align-content: flex-start;*/
-    /*align-items: center;*/
-    /*border: solid 1px blue;*/
 }
 
 div.sliders {
     width: 100%;
     max-height: 80vh;
-    /*border: white solid 1px;*/
     overflow: hidden;
     text-align: center;
-    /*margin: 0 auto;*/
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .slide {
@@ -34,23 +28,21 @@ div.sliders {
 }
 
 img {
-    width: 100%; /* ширина картинки */
-    height: auto; /* высота картинки */
-    /*object-fit: cover;*/
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /*position: relative;*/
-    align-items: flex-start;
+    align-items: center;
 }
 
 .slider-text {
     margin-top: 2rem;
     color: white;
-
 }
 
 .slider-control {
@@ -66,16 +58,15 @@ img {
 .square {
     margin: 1px;
     box-sizing: border-box;
-    width: 40px;
-    height: 40px;
-    border: dashed 1px white;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
 }
 
 .circle {
-    margin: 9px auto;
-    width: 20px;
-    height: 20px;
+    margin: 5px auto;
+    width: 15px;
+    height: 15px;
     border-width: 2px;
     border-style: solid;
     box-sizing: border-box;
@@ -88,11 +79,23 @@ img {
     background-color: black;
 }
 
-.square:hover .circle  {
+.square:hover .circle {
     border-color: white;
     background-color: white;
 }
 
-.square.slide-active:hover .circle  {
+.square.slide-active:hover .circle {
     background-color: black;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    div.sliders {
+        max-height: 266px;
+    }
 }
