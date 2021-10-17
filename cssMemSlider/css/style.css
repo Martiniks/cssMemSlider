@@ -3,7 +3,7 @@ body {
 }
 
 main {
-    width: 90%;
+    width: 96%;
     margin: 2vh auto;
     max-width: 1920px;
 }
@@ -64,7 +64,6 @@ label {
     width: 30px;
     height: 30px;
     cursor: pointer;
-    /*border: dashed 1px white;*/
 }
 
 .circle {
@@ -92,7 +91,6 @@ label:hover .circle {
 #slide6:checked ~ .container label:nth-of-type(6) .circle {
     background-color: black;
 }
-
 
 /*Slide Text */
 
@@ -147,6 +145,8 @@ i {
         opacity: 1;
     }
 }
+
+/*Mobil version*/
 
 @media (max-width: 720px) {
 
