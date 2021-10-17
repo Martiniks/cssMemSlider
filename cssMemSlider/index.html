@@ -8,53 +8,71 @@
 </head>
 <body>
 
-<main>
-  <div class="sliders">
-    <div class="slide  slide-active">
+<main class="wrapper">
+
+  <input type="radio" name="point" id="slide1" checked>
+  <input type="radio" name="point" id="slide2">
+  <input type="radio" name="point" id="slide3">
+  <input type="radio" name="point" id="slide4">
+  <input type="radio" name="point" id="slide5">
+  <input type="radio" name="point" id="slide6">
+
+  <div class="slider">
+    <div class="slides slide1">
       <img src="assets/img/1.jpg" alt="1" width="1920" height="1200">
     </div>
-    <div class="slide">
+    <div class="slides slide2">
       <img src="assets/img/2.jpg" alt="2" width="1920" height="1199">
     </div>
-    <div class="slide">
+    <div class="slides slide3">
       <img src="assets/img/3.jpg" alt="3" width="1920" height="1200">
     </div>
-    <div class="slide">
+    <div class="slides slide4">
       <img src="assets/img/4.jpg" alt="4" width="1920" height="1080">
     </div>
-    <div class="slide">
+    <div class="slides slide5">
       <img src="assets/img/5.jpg" alt="5" width="1920" height="1080">
     </div>
-    <div class="slide">
+    <div class="slides slide6">
       <img src="assets/img/6.jpg" alt="6" width="1920" height="1080">
     </div>
   </div>
+
   <div class="container">
-    <div class="slider-text"><i id="slider-text"> Осень наступила... (Autumn has come ...)</i></div>
-    <div class="slider-control">
-      <div class="square slide-active" >
-        <div class="circle"></div>
-      </div>
-      <div class="square" >
-        <div class="circle"></div>
-      </div>
-      <div class="square" >
-        <div class="circle"></div>
-      </div>
-      <div class="square" >
-        <div class="circle"></div>
-      </div>
-      <div class="square" >
-        <div class="circle"></div>
-      </div>
-      <div class="square" >
-        <div class="circle"></div>
-      </div>
+
+    <div class="slider-text">
+      <i id="slider-text1"> Осень наступила... (Autumn has come ...)</i>
+      <i id="slider-text2"> ... листья все опали (... the leaves all fell)</i>
+      <i id="slider-text3"> Яблоки собрали...(Apples were harvested ...)</i>
+      <i id="slider-text4"> ... и дожди пошли (...and it falling rain)</i>
+      <i id="slider-text5"> Птицы улетают ... (The birds fly away...)</i>
+      <i id="slider-text6"> ... и зима придет ( ...and winter will come )</i>
     </div>
+
+    <div class="slider-control">
+      <label for="slide1">
+        <div class="circle"></div>
+      </label>
+      <label for="slide2">
+        <div class="circle"></div>
+      </label>
+      <label for="slide3">
+        <div class="circle"></div>
+      </label>
+      <label for="slide4">
+        <div class="circle"></div>
+      </label>
+      <label for="slide5">
+        <div class="circle"></div>
+      </label>
+      <label for="slide6">
+        <div class="circle"></div>
+      </label>
+    </div>
+
   </div>
 
 </main>
 
-<script src="js/slider.js"></script>
 </body>
 </html>

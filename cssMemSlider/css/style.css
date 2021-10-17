@@ -8,7 +8,11 @@ main {
     max-width: 1920px;
 }
 
-div.sliders {
+.wrapper > input {
+    display: none;
+}
+
+div.slider {
     width: 100%;
     max-height: 80vh;
     overflow: hidden;
@@ -19,12 +23,8 @@ div.sliders {
     border-radius: 15px;
 }
 
-.slide {
+.slides {
     display: none;
-}
-
-.slide.slide-active {
-    display: block;
 }
 
 img {
@@ -43,7 +43,10 @@ img {
 .slider-text {
     margin-top: 2rem;
     color: white;
+    overflow: hidden;
 }
+
+/*Slider Controls*/
 
 .slider-control {
     margin-top: 2rem;
@@ -55,12 +58,13 @@ img {
     height: 10%;
 }
 
-.square {
+label {
     margin: 1px;
     box-sizing: border-box;
     width: 30px;
     height: 30px;
     cursor: pointer;
+    /*border: dashed 1px white;*/
 }
 
 .circle {
@@ -75,27 +79,87 @@ img {
     background-color: deepskyblue;
 }
 
-.square.slide-active .circle {
-    background-color: black;
-}
-
-.square:hover .circle {
+label:hover .circle {
     border-color: white;
     background-color: white;
 }
 
-.square.slide-active:hover .circle {
+#slide1:checked ~ .container label:nth-of-type(1) .circle,
+#slide2:checked ~ .container label:nth-of-type(2) .circle,
+#slide3:checked ~ .container label:nth-of-type(3) .circle,
+#slide4:checked ~ .container label:nth-of-type(4) .circle,
+#slide5:checked ~ .container label:nth-of-type(5) .circle,
+#slide6:checked ~ .container label:nth-of-type(6) .circle {
     background-color: black;
 }
 
-@media (max-width: 600px) {
+
+/*Slide Text */
+
+i {
+    display: none;
+    font-size: 1.2rem;
+}
+
+#slide1:checked ~ .container i:nth-of-type(1),
+#slide2:checked ~ .container i:nth-of-type(2),
+#slide3:checked ~ .container i:nth-of-type(3),
+#slide4:checked ~ .container i:nth-of-type(4),
+#slide5:checked ~ .container i:nth-of-type(5),
+#slide6:checked ~ .container i:nth-of-type(6) {
+    display: inline-block;
+    animation-delay: 3s;
+    animation: slideUp 3s;
+}
+
+/*Slider Img*/
+
+#slide1:checked ~ .slider div.slides:nth-of-type(1),
+#slide2:checked ~ .slider div.slides:nth-of-type(2),
+#slide3:checked ~ .slider div.slides:nth-of-type(3),
+#slide4:checked ~ .slider div.slides:nth-of-type(4),
+#slide5:checked ~ .slider div.slides:nth-of-type(5),
+#slide6:checked ~ .slider div.slides:nth-of-type(6) {
+    display: block;
+    animation-delay: 0s;
+    animation: showup 3s ease-in;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0%);
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes showup {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 720px) {
+
+    i {
+        font-size: 1rem;
+    }
 
     .container {
         display: flex;
         flex-direction: column-reverse;
     }
 
-    div.sliders {
-        max-height: 266px;
+    div.slider {
+        max-height: 245px;
     }
 }
